@@ -23,11 +23,13 @@ function draw() {
       ellipse(nodePos[i][j][0],nodePos[i][j][1],NodeWidth);
     }
   }
-  debugger;
+//  debugger;
   for(var i =0;i<nodePos.length;i++){
     for(var j =0;j<nodePos[i].length;j++){
-      for(var k=1;k<nodes[k];k++){
-
+      if(i!=nodePos.length-1){
+        for(var k=0;k<nodes[i+1];k++){
+          line(nodePos[i][j][0]+NodeWidth/2,nodePos[i][j][1],nodePos[i+1][k][0]-NodeWidth/2,nodePos[i+1][k][1]);
+        }
       }
     }
   }
