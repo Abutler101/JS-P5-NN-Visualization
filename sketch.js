@@ -1,9 +1,9 @@
-var nodes = [10,5,9,4,6,2];
+var nodes = [46,30,9,4,6,2];
 var nodePos = [];
 var NodeWidth = 50;
-var outOfLayers = [[],[],[],[],[],[]];
+var outOfLayers = [];
 function setup() {
-  createCanvas(1500,800);
+  createCanvas(3500,3500);
   var x = 100;
   for(var i =0;i<nodes.length;i++){
     var y = 40;
@@ -13,13 +13,16 @@ function setup() {
       y+=75;
     }
     nodePos.push(layer);
-    x+=150;
+    x+=300;
   }
 }
 
 function draw() {
   frameRate(0.6);
   //For testing purposes only
+  for(var n = 0;n<nodes.length;n++){
+      outOfLayers[n]=[];
+  }
   for(var l = 0;l<nodes.length;l++){
     for(var m =0;m<nodes[l];m++){
       outOfLayers[l][m] = random(-1,1);
